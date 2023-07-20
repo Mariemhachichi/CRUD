@@ -1,7 +1,8 @@
 import { faCheckCircle, faCircle, faTrash } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+import { checkProduct, deleteProduct, getProducts } from '../App/app'
+import Produit from './Produit'
 
 export default function Produits() {
   const [products, setProducts] = useState([])
@@ -12,22 +13,24 @@ export default function Produits() {
   },[])
 
   const handleGetProduct =()=>{
-    axios.get("http://localhost:9000/products")
-    .then(resp=>{
-      const products = resp.data
-      setProducts(products)
-    })
-    .catch(err=>{
-      console.log(err)
-    })
+   getProducts().then(resp=>{
+    setProducts(resp.data)
+   }).catch(err=>{
+    console.log(err)
+   })
   }
    //Delete
    const handleDeleteProduct =(product)=>{
-    const newProducts = products.filter((p) =>p.id != product.id)
-    setProducts(newProducts)
+    deleteProduct(product).then((resp)=>{
+      const newProducts = products.filter((p) =>p.id != product.id)
+      setProducts(newProducts)
+    })
+   
   }
   //Check Product
   const handleCheckProduct =(product)=>{
+
+  checkProduct(product).then(resp=>{
     const newProducts = products.map(p =>{
       if(p.id == product.id){
         p.checked=!p.checked
@@ -35,6 +38,7 @@ export default function Produits() {
       return p
     })
     setProducts(newProducts)
+  })
   }
   return (
     <div className='p-1 m-1'>
@@ -77,6 +81,9 @@ export default function Produits() {
                   </table>
               </div>
             </div>
+          </div>
+          <div className='col-md-6'>
+                    <Produit />
           </div>
         </div>
     </div>

@@ -1,32 +1,25 @@
 {
-    "products":[
-        {
-            "id":1,
-            "Nom":"Produit1",
-            "Prix":2200.020,
-            "Quantité":5,
-            "checked":false
-        },
-        {
-            "id":2,
-            "Nom":"Produit2",
-            "Prix":5200.020,
-            "Quantité":55,
-            "checked":true
-        },
-        {
-            "id":3,
-            "Nom":"Produit3",
-            "Prix":7200.020,
-            "Quantité":75,
-            "checked":false
-        },
-        {
-            "id":4,
-            "Nom":"Produit4",
-            "Prix":9200.020,
-            "Quantité":25,
-            "checked":false
-        }
-    ]
+  "products": [
+    {
+      "id": 1,
+      "Nom": "Produit3",
+      "Prix": 7200.02,
+      "Quantité": 75,
+      "checked": true
+    },
+    {
+      "id": 2,
+      "Nom": "Produit3",
+      "Prix": 7200.02,
+      "Quantité": 75,
+      "checked": false
+    },
+    {
+      "Nom": "test",
+      "Prix": "9",
+      "Quantité": "55",
+      "checked": "on",
+      "id": 4
+    }
+  ]
 }
