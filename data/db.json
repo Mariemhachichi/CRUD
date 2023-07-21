@@ -16,9 +16,16 @@
     },
     {
       "Nom": "test",
-      "Prix": "9",
-      "Quantité": "55",
+      "Prix": "5200",
+      "Quantité": "5",
       "checked": "on",
+      "id": 3
+    },
+    {
+      "Nom": "",
+      "Prix": 0,
+      "Quantité": 0,
+      "checked": false,
       "id": 4
     }
   ]
